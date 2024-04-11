@@ -8,7 +8,8 @@
 // Define the final points. ---> Once the rotations are concluded, the final points are calculated.
 // Define the conditions for winning the whole game.
 
-
+import Player.Player;
+import Quiz.Quiz;
 
 public class Main
 {    public static void main(String[] args)
@@ -18,11 +19,36 @@ public class Main
         Player player3 = new Player();
         Player player4 = new Player();
 
-        player1.presentation();
-        player2.setName("Marcus");
-        player2.presentation();
-        player3.setName("Jimmy");
-        player3.presentation();
-        player4.presentation();
+        Player[] players = new Player[4];
+        players[0] = player1;
+        players[1] = player2;
+        players[2] = player3;
+        players[3] = player4;
+
+        players[0].setName("David");
+        players[0].setDecision("no");
+        players[0].presentation();
+        players[1].setName("Marcus");
+        players[1].setDecision("yes");
+        players[1].presentation();
+        players[2].setName("Jimmy");
+        players[2].setDecision("no");
+        players[2].presentation();
+        players[3].setName("Amanda");
+        players[3].setDecision("no");
+        players[3].presentation();
+
+        for(int i = 0; i<players.length; i++)
+        {
+            if(players[i].getDecision() == "yes")
+            {
+                System.out.println("The quiz can start!");
+            }
+            else
+            System.out.println("The quiz cannot start.");
+        }
+
+
+
     }
 }
