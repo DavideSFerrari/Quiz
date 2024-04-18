@@ -1,5 +1,5 @@
 // Create class Main
-    // Create void method and test it.
+    // Create void method and test it.   ✓
 // Create a Quiz project
     // Class for questions: Question
         // Definition of the questions traits;
@@ -8,7 +8,6 @@
         // Use of the question (Question obj):
             // Creation of the Question obj;
             // Creation for a method which implements the object.
-
 
 
 
