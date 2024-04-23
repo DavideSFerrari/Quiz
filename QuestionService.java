@@ -1,7 +1,7 @@
 public class QuestionService 
 {
 
-    Question[] question = new Question[3];
+    Question question[] = new Question[3];
 
     public QuestionService()
     {
@@ -12,29 +12,19 @@ public class QuestionService
 
     public void displayQuestion()
     {
-        System.out.println("Question " + question[0].getId() + ": " + question[0].getQuestion());
-        System.out.println("Options:");
-        System.out.println(question[0].getOpt1());
-        System.out.println(question[0].getOpt2());
-        System.out.println(question[0].getOpt3());
-        System.out.println(question[0].getOpt4());
-        System.out.println("Correct answer: "+ question[0].getAnswer());
-
-        System.out.println("Question " + question[1].getId() + ": " + question[1].getQuestion());
-        System.out.println("Options:");
-        System.out.println(question[1].getOpt1());
-        System.out.println(question[1].getOpt2());
-        System.out.println(question[1].getOpt3());
-        System.out.println(question[1].getOpt4());
-        System.out.println("Correct answer: "+ question[1].getAnswer());
-
-        System.out.println("Question " + question[2].getId() + ": " + question[2].getQuestion());
-        System.out.println("Options:");
-        System.out.println(question[2].getOpt1());
-        System.out.println(question[2].getOpt2());
-        System.out.println(question[2].getOpt3());
-        System.out.println(question[2].getOpt4());
-        System.out.println("Correct answer: "+ question[2].getAnswer());
+        for (Question q : question)
+        {
+            System.out.println("Question " + q.getId() + ": " + question[0].getQuestion());
+            System.out.println("Options:");
+            System.out.println(q.getOpt1());
+            System.out.println(q.getOpt2());
+            System.out.println(q.getOpt3());
+            System.out.println(q.getOpt4());
+            System.out.println(q.getOpt1());
+            System.out.println(q.getOpt2());
+            System.out.println(q.getOpt3());
+            System.out.println(q.getOpt4());
+            System.out.println("Correct answer: "+ q.getAnswer());
+        }
     }
-
 }
