@@ -19,7 +19,7 @@ public class QuestionService
         int i = 0;
         for (Question q : question)
         {
-            System.out.println("Question " + q.getId() + ": " + question[0].getQuestion());
+            System.out.println("Question " + q.getId() + ": " + q.getQuestion());
             System.out.println("Options:");
             System.out.println(q.getOpt1());
             System.out.println(q.getOpt2());
@@ -33,5 +33,25 @@ public class QuestionService
         {
             System.out.println("Correct answer: "+ q.getAnswer());
         }
+    }
+
+    public void score()
+    {
+        int points = 0;
+        for(int i=0; i<question.length; i++)
+        {
+            if(question[i].getAnswer().equals(answer[i]))
+            {
+                points += 3;
+                System.out.println("The answer is correct. Number of points: " + points);
+            }
+            else
+            {
+                System.out.println("Wrong answer.");
+                System.out.println(answer[i]);
+                System.out.println(question[i].getAnswer());
+            }
+        }
+        System.out.println("The final accumulated points are: " + points);
     }
 }

@@ -17,6 +17,7 @@ public class Main
     {
         QuestionService questionService = new QuestionService();
         questionService.displayQuestion();
+        questionService.score();
     }
 
 }
