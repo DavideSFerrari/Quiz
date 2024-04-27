@@ -2,16 +2,38 @@ import java.util.Scanner;
 
 public class QuestionService 
 {
-
+    Person person[] = new Person[3];
     Question question[] = new Question[3];
+    Scanner presentation = new Scanner(System.in);
     Scanner prompt = new Scanner(System.in);
     String answer[] = new String[3];
 
     public QuestionService()
     {
+        person[0] = new Person();
+        person[1] = new Person();
+        person[2] = new Person();
         question[0] = new Question(0, "What programming language is this?", "Php", "Java", "Python", "Javascript", "Java");
         question[1] = new Question(1, "What is Javas most popular framework?", "Laravel", "Spring", "React", "Angular", "Spring");
         question[2] = new Question(2, "What programming language is front-end?", "Php", "Java", "Python", "Javascript", "Javascript");
+    }
+
+    public void presentation()
+    {
+        for(int i=0; i<3; i++)
+        {
+        System.out.println("What's your name?");
+        person[i].name = presentation.nextLine();
+        System.out.println("How old are you?");
+        person[i].age = presentation.nextInt();
+        System.out.println("What's your gender?");
+        person[i].gender = presentation.nextLine();
+        person[i].gender = presentation.nextLine();
+        }
+        for(int i=0; i<3; i++)
+        {
+        System.out.println("Hello, my name is " + person[i].name +", and I am " + person[i].age +  " years old.");
+        }
     }
 
     public void displayQuestion()
