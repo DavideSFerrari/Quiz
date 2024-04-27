@@ -6,7 +6,7 @@ public class QuestionService
     Question question[] = new Question[3];
     Scanner presentation = new Scanner(System.in);
     Scanner prompt = new Scanner(System.in);
-    String answer[] = new String[3];
+    String answer[] = new String[9];
 
     public QuestionService()
     {
@@ -23,12 +23,9 @@ public class QuestionService
         for(int i=0; i<3; i++)
         {
         System.out.println("What's your name?");
-        person[i].name = presentation.nextLine();
+        person[i].name = presentation.next();
         System.out.println("How old are you?");
         person[i].age = presentation.nextInt();
-        System.out.println("What's your gender?");
-        person[i].gender = presentation.nextLine();
-        person[i].gender = presentation.nextLine();
         }
         for(int i=0; i<3; i++)
         {
@@ -39,22 +36,48 @@ public class QuestionService
     public void displayQuestion()
     {
         int i = 0;
-        for (Question q : question)
+        
+        for (Person p : person)
         {
-            System.out.println("Question " + q.getId() + ": " + q.getQuestion());
-            System.out.println("Options:");
-            System.out.println(q.getOpt1());
-            System.out.println(q.getOpt2());
-            System.out.println(q.getOpt3());
-            System.out.println(q.getOpt4());
-            System.out.println("Give the right answer:");
-            answer[i] = prompt.nextLine();
-            i++;
+            System.out.println("The player ready for this turn is: " + p.name +".");
+
+            for (Question q : question)
+            {
+                System.out.println("Question " + q.getId() + ": " + q.getQuestion());
+                System.out.println("Options:");
+                System.out.println(q.getOpt1());
+                System.out.println(q.getOpt2());
+                System.out.println(q.getOpt3());
+                System.out.println(q.getOpt4());
+                System.out.println("Give the right answer:");
+                answer[i] = prompt.nextLine();
+                i++;
+
+            }
+            for (Question q : question)
+            {
+                System.out.println("Correct answer: "+ q.getAnswer());
+            }
+
+
         }
-        for (Question q : question)
-        {
-            System.out.println("Correct answer: "+ q.getAnswer());
-        }
+
+    //     for (Question q : question)
+    //     {
+    //         System.out.println("Question " + q.getId() + ": " + q.getQuestion());
+    //         System.out.println("Options:");
+    //         System.out.println(q.getOpt1());
+    //         System.out.println(q.getOpt2());
+    //         System.out.println(q.getOpt3());
+    //         System.out.println(q.getOpt4());
+    //         System.out.println("Give the right answer:");
+    //         answer[i] = prompt.nextLine();
+    //         i++;
+    //     }
+    //     for (Question q : question)
+    //     {
+    //         System.out.println("Correct answer: "+ q.getAnswer());
+    //     }
     }
 
     public void score()
