@@ -29,20 +29,20 @@ public class QuestionService
         for(int i=0; i<3; i++)
         {
             System.out.println("What's your name?");
-            participant[i].name = presentation.next();
+            participant[i].setName(presentation.next());
             System.out.println("How old are you?");
-            participant[i].age = presentation.nextInt();
+            participant[i].setAge(presentation.nextInt());
         }
         for(int i=0; i<3; i++)
         {
-            System.out.println("Hello, my name is " + participant[i].name +", and I am " + participant[i].age +  " years old.");
+            System.out.println("Hello, my name is " + participant[i].getName() +", and I am " + participant[i].getAge() +  " years old.");
         }
     }
 
     public void displayQuestion()
     {
 
-        System.out.println("The player ready for this turn is: " + participant[0].name + ".");
+        System.out.println("The player ready for this turn is: " + participant[0].getName() + ".");
         
         System.out.println("Question " + question[0].getId() + ": " + question[0].getQuestion());
         System.out.println("Options:");
@@ -71,7 +71,7 @@ public class QuestionService
 
 
 
-        System.out.println("The player ready for this turn is: " + participant[1].name + ".");
+        System.out.println("The player ready for this turn is: " + participant[1].getName() + ".");
         
         System.out.println("Question " + question[3].getId() + ": " + question[3].getQuestion());
         System.out.println("Options:");
@@ -100,7 +100,7 @@ public class QuestionService
 
 
 
-        System.out.println("The player ready for this turn is: " + participant[2].name + ".");
+        System.out.println("The player ready for this turn is: " + participant[2].getName() + ".");
         
         System.out.println("Question " + question[6].getId() + ": " + question[6].getQuestion());
         System.out.println("Options:");
@@ -144,10 +144,10 @@ public void score()
         }
         else
         {
-            System.out.println(question[i].getAnswer() + " is a wrong answer. The correct answer is: " + answer[i]);
+            System.out.println(answer[i] + " is a wrong answer. The correct answer is: " + question[i].getAnswer());
         }
     }
-    System.out.println("The final accumulated points for " + participant[0].name + " are: " + points1);
+    System.out.println("The final accumulated points for " + participant[0].getName() + " are: " + points1);
 
     for(int i=3; i<6; i++)
     {
@@ -158,10 +158,10 @@ public void score()
         }
         else
         {
-            System.out.println(question[i].getAnswer() + " is a wrong answer. The correct answer is: " + answer[i]);
+            System.out.println(answer[i] + " is a wrong answer. The correct answer is: " + question[i].getAnswer());
         }
     }
-    System.out.println("The final accumulated points for " + participant[1].name + " are: " + points2);
+    System.out.println("The final accumulated points for " + participant[1].getName() + " are: " + points2);
 
     for(int i=6; i<9; i++)
     {
@@ -172,10 +172,10 @@ public void score()
         }
         else
         {
-            System.out.println(question[i].getAnswer() + " is a wrong answer. The correct answer is: " + answer[i]);
+            System.out.println(answer[i] + " is a wrong answer. The correct answer is: " + question[i].getAnswer());
         }
     }
-    System.out.println("The final accumulated points for " + participant[2].name + " are: " + points3);
+    System.out.println("The final accumulated points for " + participant[2].getName() + " are: " + points3);
 
 }
 }

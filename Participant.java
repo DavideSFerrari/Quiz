@@ -1,7 +1,7 @@
 public class Participant {
 
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     public Participant()
     {
